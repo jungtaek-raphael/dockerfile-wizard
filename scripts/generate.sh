@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "FROM buildpack-deps:$(awk -F'_' '{print tolower($2)}' <<< $LINUX_VERSION)"
+echo "FROM docker:$DOCKER_VERSION"
 
 echo "RUN apt-get update"
 
@@ -97,6 +97,10 @@ echo "RUN perl -MCPAN -e 'install XML::Generator'"
 
 # install lsb-release, etc., for testing linux distro
 echo "RUN apt-get update && apt-get -y install lsb-release unzip"
+
+# install dependencies for aws cli
+echo "RUN apt-get -y install curl py-pip bash jq"
+echo "RUN pip install awscli==1.16.60"
 
 if [ $BROWSERS = "true" ] ; then
 cat << EOF
