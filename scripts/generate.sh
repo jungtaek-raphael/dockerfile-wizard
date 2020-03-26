@@ -6,5 +6,3 @@ echo "FROM docker:$DOCKER_VERSION"
 echo "RUN apk update"
 echo "RUN apk add curl py-pip bash jq"
 echo "RUN pip install awscli==1.16.60"
-
-
