@@ -1,8 +1,7 @@
 #!/bin/bash
 
-echo "FROM docker:$DOCKER_VERSION"
+echo "FROM python:3.6-alpine"
 
-# install dependencies for aws cli
+# install dependencies
 echo "RUN apk update"
-echo "RUN apk add --no-cache curl git openssh py-pip bash jq"
-echo "RUN pip install awscli==1.16.60"
+echo "RUN apk --no-cache add gcc build-base linux-headers postgresql-dev"

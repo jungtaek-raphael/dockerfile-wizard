@@ -4,11 +4,9 @@ image_config: &image_config
   # either as project-specific environment variables
   # or as resources in your organization's org-global Context
 
-  IMAGE_NAME: circleci-docker
+  IMAGE_NAME: python3.6-alpine
 
-  IMAGE_TAG: 18.09.0
-
-  DOCKER_VERSION: 18.09.0
+  IMAGE_TAG: latest
 
   # NOTE: if you're modifying this config.yml file manually
   # rather than using the included setup script,
