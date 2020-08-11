@@ -4,11 +4,11 @@ image_config: &image_config
   # either as project-specific environment variables
   # or as resources in your organization's org-global Context
 
-  IMAGE_NAME: circleci-docker
+  IMAGE_NAME: python3.6-alpine
 
-  IMAGE_TAG: 18.09.0
+  IMAGE_TAG: 19.03.12
 
-  DOCKER_VERSION: 18.09.0
+  DOCKER_VERSION: 19.03.12
 
   # NOTE: if you're modifying this config.yml file manually
   # rather than using the included setup script,
@@ -21,7 +21,7 @@ image_config: &image_config
 
   NODE_VERSION_NUM: 10.19.0
 
-  PYTHON_VERSION_NUM: 3.8.2
+  PYTHON_VERSION_NUM: 3.6
 
   JAVA: false
 
@@ -58,7 +58,7 @@ jobs:
 
   test_image:
     docker:
-      - image: $DOCKER_USERNAME/meta-service-ci-docker:18.09.0
+      - image: $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
         environment:
           <<: *image_config
 
